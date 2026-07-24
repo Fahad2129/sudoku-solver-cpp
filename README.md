@@ -1,13 +1,12 @@
 # Sudoku Solver
 
-An Apple-inspired Sudoku puzzle solver built in C++17 with SFML 2.5+.
+Sudoku puzzle solver built in C++17 with SFML 2.5+.
 
 ---
 
 ## Features
 
 - **Backtracking solver** with MRV (Minimum Remaining Values) heuristic
-- **Apple design language** — Inter font, `#F5F5F7` background, `#0071E3` accent blue
 - **Live conflict detection** — violating cells highlight in red as you type
 - **Same-number highlighting** — selecting a cell highlights all matching digits
 - **Solve animation** — filled cells pulse blue when the puzzle is solved
