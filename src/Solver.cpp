@@ -13,14 +13,13 @@ bool Solver::backtrack(SudokuGrid& grid) {
     if (!findBestEmpty(grid, row, col))
         return true;
 
-    // Try each digit 1–9
+    // Trying each digit 1–9
     for (int digit = 1; digit <= SudokuGrid::SIZE; ++digit) {
         if (grid.isValidPlacement(row, col, digit)) {
             grid.set(row, col, digit);
 
             if (backtrack(grid))
                 return true;
-
             // Backtrack: undo the placement
             grid.set(row, col, 0);
         }
@@ -33,7 +32,6 @@ bool Solver::backtrack(SudokuGrid& grid) {
 bool Solver::findBestEmpty(const SudokuGrid& grid, int& outRow, int& outCol) const {
     int bestCount = SudokuGrid::SIZE + 1;
     bool found    = false;
-
     for (int r = 0; r < SudokuGrid::SIZE; ++r) {
         for (int c = 0; c < SudokuGrid::SIZE; ++c) {
             if (!grid.isEmpty(r, c)) continue;
@@ -49,7 +47,7 @@ bool Solver::findBestEmpty(const SudokuGrid& grid, int& outRow, int& outCol) con
                 found     = true;
 
                 // Can't do better than 1 option, stop scanning
-                if (bestCount == 1) return true;
+                if (bestCount ==  1) return true;
             }
         }
     }
